@@ -1,9 +1,11 @@
 Package: cases
-Title: What the package does (short line)
+Title: Utilities for camelCase, snake_case, Title Case, etc.
 Version: 0.1
-Authors@R: "First Last <first.last@example.com> [aut, cre]"
-Description: What the package does (paragraph)
+Authors@R: "Christopher Brown <chris.brown@decisionpatterns.com> [aut, cre]"
+Description: Utilities for formatting character vectors according to specialized rules
+What the package does (paragraph)
 Depends:
-    R (>= 3.1.0)
-License: What license is it under?
+    R (>= 3.1.0),
+    stringr
+License: GPLv2
 LazyData: true
