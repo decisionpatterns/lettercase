@@ -1,7 +1,6 @@
-
 #' snake_case
 #' 
-#' S4 class for Snake Case
+#' Render string in snake case.
 #' 
 #' Snake Case is disringuished by:
 #' * all lowercase letters
@@ -9,14 +8,10 @@
 #' * special characters not allowed 
 #' 
 #' @examples
-#'   snake_case('one flew over the cuckoo's nest')   
-#'   snake_case('on the road')
-#'   snake_case(')
+#'   snake_case("one flew over the cuckoo's nest")   
+#'   
 #' @rdname snake_case
 #' @export   
-
-
-
 
 snake_case <- 
   setClass( 'snake_case', contains='character' )
@@ -26,7 +21,12 @@ setMethod( 'initialize', 'snake_case',
 )
 
 
+# ---------------------------------------------------------------------
+# Accessor Methods
+# ---------------------------------------------------------------------
+
 #' @rdname snake_case
+#' @name [
 setReplaceMethod( '[', 'snake_case', 
                   function( x, i, value ) { 
                     x[i] <- .snake_case(value)  
@@ -35,6 +35,7 @@ setReplaceMethod( '[', 'snake_case',
 )
 
 #' @rdname snake_case
+#' @name `[[`
 setReplaceMethod( '[[', 'snake_case', 
                   function(x,i,value)  { 
                     x[[i]] <- .snake_case(value)
@@ -43,22 +44,13 @@ setReplaceMethod( '[[', 'snake_case',
 )
 
 
+# ---------------------------------------------------------------------
+# show
+# ---------------------------------------------------------------------
 #' @rdname snake_case
-setAs( 'character', 'snake_case', function(from) .snake_case(from) )
-
-#' @rdname snake_case
-setAs( 'snake_case', 'snake_case', function(from) .snake_case(from) )
-
-
-#' @rdname snake_case
+#' @export
 setMethod( 'show', 'snake_case', function(object) show(object@.Data) )
 
-
-#' @examples 
-#'   as.snake_case( "one flew over the cuckoo's_nest" )
-#' @rdname
-
-as.snake_case <- function(x) as(x, 'snake_case' )       
 
 
 
@@ -71,15 +63,15 @@ as.snake_case <- function(x) as(x, 'snake_case' )
 #' @param acronyms character; tokens to capitalize
 #' 
 #' @examples
-#'   .snake_case( 'One Flew Over The Cuckoo's Nest' )
-
+#'   .snake_case( "One Flew Over The Cuckoo's Nest" )
+#' @rdname snake_case
 .snake_case <- function(x, acronyms=NULL ) {
   
   if( ! is.character(x) ) stop( as.character(sys.call())[-1], ' is not character' )
   
   for( ac in acronyms )  x <- gsub( tolower(ac), ac, x )
   
-  x <- gsub( '[^\w]', '')
+  x <- gsub( '[^\\w]', '')
   x <- tolower(x)
   x <- gsub( '\\s+', '_', x, perl=TRUE )
   

@@ -3,8 +3,18 @@
 \name{cases}
 \alias{cases}
 \alias{cases-package}
-\title{cases.}
+\title{lettercase}
 \description{
-cases.
+A package for formatting and manipulating various types of cases. This
+package provides utilities that handles several properties.
+}
+\details{
+* capitalization
+* whitespace
+* special characters
+* acronyms
+}
+\references{
+\url{http://en.wikipedia.org/wiki/Letter_case}
 }
 

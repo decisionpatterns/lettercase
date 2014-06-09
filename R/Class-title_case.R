@@ -10,22 +10,26 @@
 #' * acronyms are honored
 #' 
 #' @examples
-#'   title_case('one flew over the cuckoo's nest')   
+#'   title_case("one flew over the cuckoo's nest")   
 #'   title_case('on the road')
-#'   title_case(')
 #'   
 #' @rdname title_case
-#' @export   
+#' @export title_case  
 
 title_case <- 
   setClass( 'title_case', contains='character' )
 
+
 setMethod( 'initialize', 'title_case', 
-  function( .Object, ... ) { .Object@.Data <- .title_case(...) ; .Object }
+           function( .Object, ... ) { .Object@.Data <- .title_case(...) ; .Object }
 )
 
-
+# ---------------------------------------------------------------------
+# Accessors 
+# ---------------------------------------------------------------------
+#' @name [
 #' @rdname title_case
+
 setReplaceMethod( '[', 'title_case', 
   function( x, i, value ) { 
     x[i] <- .title_case(value)  
@@ -33,6 +37,7 @@ setReplaceMethod( '[', 'title_case',
   }
 )
 
+#' @name [[
 #' @rdname title_case
 setReplaceMethod( '[[', 'title_case', 
   function(x,i,value)  { 
@@ -41,23 +46,8 @@ setReplaceMethod( '[[', 'title_case',
   }
 )
 
-
-#' @rdname title_case
-setAs( 'character', 'title_case', function(from) .title_case(from) )
-
-#' @rdname title_case
-setAs( 'snake_case', 'title_case', function(from) .title_case(from) )
-
-
 #' @rdname title_case
 setMethod( 'show', 'title_case', function(object) show(object@.Data) )
-
-
-#' @examples 
-#'   as.title_case( "one flew over the cuckoo's_nest" )
-#' @rdname
-
-as.title_case <- function(x) as(x, 'title_case' )       
 
 
 
@@ -70,16 +60,17 @@ as.title_case <- function(x) as(x, 'title_case' )
 #' @param acronyms character; tokens to capitalize
 #' 
 #' @examples
-#'   .title_case( 'One Flew Over The Cuckoo's Nest' )
-#'   .title_case( 'one_flew_over_the_cuckoo's_nest' )
+#'   .title_case( "One Flew Over The Cuckoo's Nest" )
+#'   .title_case( "one_flew_over_the_cuckoo_'_s_nest" )
+#' @rdname title_case
 
 .title_case <- function(x ) {
   
   # for( ac in acronyms )  x <- gsub( tolower(ac), ac, x )
-
+  
   
   x <- gsub( "[\\s_]+", " ", x )  # whitespace to single space
-    
+  
   x <- gsub( "\\b([a-z])([a-z]+)", "\\U\\1\\L\\2" ,x, perl=TRUE ) # ucfirst
   
   return(x)

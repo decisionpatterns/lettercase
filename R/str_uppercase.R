@@ -8,6 +8,7 @@
 
 str_uppercase <- function(string) toupper(string)
 
-#' @rdname srr_uppercase
+#' @rdname str_uppercase
 #' @export
+
 str_lowercase <- function(string) tolower(string)
