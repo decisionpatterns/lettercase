@@ -39,7 +39,7 @@
 #'   # "a_and_b"   "a_and_b_1"
 #'   make_names(c("a and b", "a.and_b"), unique = TRUE)
 #'   # "a.and.b"  "a_and_b"
-#'   make_names(c("a and b", "a.and_b"), unique = TRUE, allow_ = FALSE)
+#'   make_names(c("a and b", "a.and_b"), unique = TRUEn)
 #'   # "a_and_b"   "a_and_b_1"
 #'   make_names( c(".a", "_b") )  # "a" "b"
 #' 
