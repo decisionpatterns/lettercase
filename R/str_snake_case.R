@@ -16,6 +16,7 @@
 #'  
 #' @rdname SnakeCase
 #' @aliases str_snake_case
+#' @export
 
 str_snake_case <- function(string) { #
   

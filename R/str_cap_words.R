@@ -15,6 +15,7 @@
 #'  
 #' @rdname CapWords
 #' @aliases str_cap_words
+#' @export
 
 str_cap_words <- function(string) { #
   

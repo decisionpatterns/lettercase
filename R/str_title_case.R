@@ -4,7 +4,7 @@
 #' exported and should not be called directly. 
 #' 
 #' @param x object to turn into a title case
-#' @param acronyms character; tokens to capitalize
+# @param acronyms character; tokens to capitalize
 #' 
 #' @examples
 #'   str_title_case( "One Flew Over The Cuckoo's Nest" )
@@ -17,7 +17,6 @@
 str_title_case <- function(x ) {
   
   # for( ac in acronyms )  x <- gsub( tolower(ac), ac, x )
-  
   
   x <- gsub( "[\\s_]+", " ", x )  # whitespace to single space
   
