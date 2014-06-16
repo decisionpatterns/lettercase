@@ -14,7 +14,7 @@
 #'   TitleCase('on the road')
 #'   
 #' @rdname TitleCase
-#' @include str_title_case.R
+#' @include str_title_case.R LetterCase.R
 #' @export   
 
 TitleCase <- setClass( 'TitleCase', contains='LetterCase' )

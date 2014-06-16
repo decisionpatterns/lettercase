@@ -1,6 +1,6 @@
 Package: lettercase
 Title: Utilities for camelCase, snake_case, Title Case, etc.
-Version: 0.4
+Version: 0.5
 Authors@R: "Christopher Brown <chris.brown@decisionpatterns.com> [aut, cre]"
 Description: Utilities for formatting and manipulating character vectors for
     specialized cases such as camelCase, snake_case, Title Case, UPPERCASE,
@@ -14,7 +14,9 @@ Roxygen: list(wrap = FALSE)
 License: GPLv2
 LazyData: true
 Collate:
+    'str_cap_words.R'
     'LetterCase.R'
+    'CapWords.R'
     'str_lower_case.R'
     'LowerCase.R'
     'str_snake_case.R'

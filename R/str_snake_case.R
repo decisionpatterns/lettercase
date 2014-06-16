@@ -2,7 +2,7 @@
 #'
 #' Function used to convert character vectors to snake case format. 
 #' 
-#' @param x object to turn into a title case
+#' @param string object to turn into a title case
 # @param acronyms character; tokens to capitalize
 #' 
 #' * characters are all lower case 
@@ -17,16 +17,16 @@
 #' @rdname SnakeCase
 #' @aliases str_snake_case
 
-str_snake_case <- function(x) { #
+str_snake_case <- function(string) { #
   
-  if( ! is.character(x) ) stop( as.character(sys.call())[-1], ' is not character' )
+  if( ! is.character(string) ) stop( as.character(sys.call())[-1], ' is not character' )
   
-  # for( ac in acronyms )  x <- gsub( tolower(ac), ac, x )
+  # for( ac in acronyms )  string <- gsub( tolower(ac), ac, string )
   
-  x <- gsub( '[^\\w\\s-]', '', x, perl=TRUE )
-  x <- tolower(x)
-  x <- gsub( '[\\s-]+', '_', x, perl=TRUE )
+  string <- gsub( '[^\\w\\s-]', '', string, perl=TRUE )
+  string <- tolower(string)
+  string <- gsub( '[\\s-]+', '_', string, perl=TRUE )
   
-  return(x)
+  return(string)
   
 }
