@@ -19,7 +19,7 @@
 
 SnakeCase <- setClass( 'SnakeCase', contains='LetterCase' )
 
-#' @name as,character
+#' @name as.character
 #' @rdname SnakeCase
 setAs( 'character', 'SnakeCase'
   , function(from) {

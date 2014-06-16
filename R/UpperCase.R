@@ -19,7 +19,7 @@
 UpperCase <- setClass( 'UpperCase', contains='LetterCase' )
 
 
-#' @name as,character
+#' @name as.character
 #' @rdname UpperCase
 #' @export
 
