@@ -1,14 +1,14 @@
 Package: lettercase
 Title: Utilities for camelCase, snake_case, Title Case, etc.
-Version: 0.5
+Version: 0.5.1
 Authors@R: "Christopher Brown <chris.brown@decisionpatterns.com> [aut, cre]"
 Description: Utilities for formatting and manipulating character vectors for
     specialized cases such as camelCase, snake_case, Title Case, UPPERCASE,
     lowercase, hyphen-case, etc.
 Depends:
     R (>= 3.1.0),
-    stringr
 Suggests:
+    stringr,
     testthat
 Roxygen: list(wrap = FALSE)
 License: GPLv2
