@@ -1,20 +1,16 @@
-#' @include Class-title_case.R
+#' @include TitleCase.R
 #' @name as
-#' @rdname title_case
-setAs( 'character', 'title_case', function(from) .title_case(from) )
+#' @rdname TitleCase
+setAs( 'character', 'TitleCase', function(from) str_title_case(from) )
 
 #' @name as
-#' @rdname title_case
-setAs( 'snake_case', 'title_case', function(from) .title_case(from) )
+#' @rdname TitleCase
 
-
-
+setAs( 'SnakeCase', 'TitleCase', function(from) str_title_case(from) )
 
 
 #' @examples 
 #'   as.title_case( "one flew over the cuckoo's_nest" )
-#' @rdname title_case
+#' @rdname TitleCase
 
-as.title_case <- function(x) as(x, 'title_case' )       
-
-
+as.title_case <- function(x) as(x, 'TitleCase' )       

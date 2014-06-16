@@ -1,17 +1,18 @@
-#' @include Class-snake_case.R
-#' @rdname snake_case
+#' @include SnakeCase.R
+#' @rdname SnakeCase
 #' @name as
-setAs( 'character', 'snake_case', function(from) .snake_case(from) )
 
-#' @rdname snake_case
+setAs( 'character', 'SnakeCase', function(from) str_snake_case(from) )
+
+#' @rdname SnakeCase
 #' @name as
-setAs( 'title_case', 'snake_case', function(from) .snake_case(from) )
 
-
+setAs( 'TitleCase', 'SnakeCase', function(from) str_snake_case(from) )
 
 
 # @examples 
 #   as.snake_case( "one flew over the cuckoo's_nest" )
-#' @rdname snake_case
+#' @rdname SnakeCase
 #' @export
-as.snake_case <- function(x) as(x, 'snake_case' )       
+
+as.snake_case <- function(x) as(x, 'SnakeCase' )       
