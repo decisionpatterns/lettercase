@@ -11,7 +11,7 @@
 #' @references
 #'   \url{http://en.wikipedia.org/wiki/Letter_case}
 #'   
-#' @name cases
+#' @name lettercase
 #' @docType package
 
 NULL
