@@ -6,8 +6,8 @@
 # @param acronyms character; tokens to capitalize
 #' 
 #' * characters are all lower case 
-#' * non- \w, \s and - are dropped
-#' * \w and - are converted to underscore
+#' * non- \code{\\w}, \code{\\s} and - are dropped
+#' * \code{\\w} and - are converted to underscore
 #' * no support for acronyms
 #' 
 #' @examples
