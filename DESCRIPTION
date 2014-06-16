@@ -1,16 +1,32 @@
 Package: lettercase
 Title: Utilities for formatting character vectors as lower case, UPPER CASE,
-    Title Case, snake_case, Cap Words, etc.
-Version: 0.9
+    Title Case, snake_case, camelCase, hyphen-case, etc.
+Version: 1.0
 Authors@R: "Christopher Brown <chris.brown@decisionpatterns.com> [aut, cre]"
-Description: Utilities for formatting and manipulating character vectors for
-    cases such as snake_case, Title Case, UPPERCASE,
-    lower case, etc.
+Description: Classes and functions for formatting and manipulating character
+    vectors as lower case, UPPER CASE, Title Case, snake_case, camelCase,
+    hyphen-case, etc.
 Depends:
     R (>= 3.1.0),
 Suggests:
     stringr,
     testthat
 Roxygen: list(wrap = FALSE)
-License: GPL-2
+License: GPLv2
 LazyData: true
+Collate:
+    'str_cap_words.R'
+    'LetterCase.R'
+    'CapWords.R'
+    'str_lower_case.R'
+    'LowerCase.R'
+    'str_snake_case.R'
+    'SnakeCase.R'
+    'str_title_case.R'
+    'TitleCase.R'
+    'str_upper_case.R'
+    'UpperCase.R'
+    'lettercase-package.R'
+    'make_names.R'
+    'str_ucfirst.R'
+    'zzz.R'
