@@ -1,7 +1,7 @@
 Package: lettercase
 Title: Utilities for formatting character vectors as lower case, UPPER CASE,
     Title Case, snake_case, Cap Words, etc.
-Version: 0.9
+Version: 0.9.1
 Authors@R: "Christopher Brown <chris.brown@decisionpatterns.com> [aut, cre]"
 Description: Utilities for formatting and manipulating character vectors for
     cases such as snake_case, Title Case, UPPERCASE,

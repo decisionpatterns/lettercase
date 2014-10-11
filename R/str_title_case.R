@@ -18,7 +18,7 @@ str_title_case <- function(x ) {
   
   # for( ac in acronyms )  x <- gsub( tolower(ac), ac, x )
   
-  x <- gsub( "[\\s_]+", " ", x )  # whitespace to single space
+  x <- gsub( "[\\s_]+", " ", x, perl=TRUE )  # whitespace to single space
   
   x <- gsub( "\\b([a-z])([a-z]+)", "\\U\\1\\L\\2" ,x, perl=TRUE ) # ucfirst
   
