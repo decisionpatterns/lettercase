@@ -7,6 +7,11 @@
     tolower(string)
   }
 
+#' @rdname str_upper_case
+#' @aliases str_lowercase 
+#' @export
+  str_lowercase <- str_lower_case
+
 #' @rdname str_upper_case 
 #' @examples 
 #' # is_lower_case 

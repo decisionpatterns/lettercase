@@ -1,6 +1,6 @@
-#' Make replace and drop functions for strings
+#' Make replace, delete and "is" functions for strings
 #' 
-#' Functions for building functions
+#' Functions for building string functions for replacement, deletion and testing
 #' 
 #' @param pattern pattern to look for, as defined by a POSIX regular expression. 
 #' See the “Extended Regular Expressions” section of regex for details. See 
@@ -11,8 +11,10 @@
 #' with the contents of the respective matched group (created by ()) within the 
 #' pattern.
 #' 
-#' Both functions build functions that take a single string argument and return
-#' a character vector as a result.
+#' @param type function that transforms the string to type.
+#' 
+#' These functions build functions that take a single string argument and return
+#' a vector as a result.
 #' 
 #' \code{make_str_replace} builds a functions that replaces the strings 
 #' according to the \code{pattern} and \code{replacement} arguments.
@@ -20,6 +22,8 @@
 #' \code{make_str_delete} builds a functions that deletes the \code{pattern} 
 #' from the string.
 #' 
+#' \code{make_str_is} builds a function that detects is the string is has a 
+#' certain type of formatting.
    
 make_str_replace <- function( pattern, replacement ) 
   function(string) {
@@ -46,3 +50,7 @@ make_str_delete <- function( pattern )
   }
 
 
+#' @rdname make_str_replace
+#' @include str_is.R
+make_str_is <- function( type ) 
+  function(string) str_is( string, type )

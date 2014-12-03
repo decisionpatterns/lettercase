@@ -24,4 +24,3 @@
 
 #' @rdname constants
   pattern_uppercase <- '[A-Z]'
-

@@ -15,7 +15,7 @@
 #'  str_cap_words( "Catch-22" )  # CATCH
 #'  
 #' @rdname CapWords
-#' @aliases str_cap_words
+#' @aliases str_cap_words cap_words
 #' @export
 
 str_cap_words <- function(string) { #

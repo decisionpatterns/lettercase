@@ -1,6 +1,6 @@
 #' str_transform
 #' 
-#' convert a string by applying one or more str_ type functions.
+#' Convert a string by applying one or more str_* functions.
 #' 
 #' @param string vector. This must be an atomic vector, and will be coerced to 
 #' a character vector 
@@ -9,7 +9,8 @@
 #' 
 #' @details
 #'   
-#'  \code{str_transform} ... 
+#'  \code{str_transform} applies successive functions to its first argument, 
+#'  \code{string}.  
 #'   
 #' @return a character vector
 #' 

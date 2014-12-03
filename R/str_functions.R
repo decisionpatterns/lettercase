@@ -63,10 +63,13 @@
 
 #' @rdname string-transformations
 #' @export
-  str_expand_capwords <- make_str_replace( pattern = '([a-z])([A-Z])', replacement = '\\1 \\2' )
+  str_expand_capwords <- 
+    make_str_replace( pattern = '([a-z])([A-Z])', replacement = '\\1 \\2' )
 
 
 #' @rdname string-transformations
 #' @export
-  str_delete_leading_nonword <- make_str_delete( )
+  str_delete_leading_nonword <- 
+    make_str_delete( pattern = '^\\W' )
+
  
