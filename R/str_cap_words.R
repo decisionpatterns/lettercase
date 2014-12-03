@@ -10,8 +10,9 @@
 #' - No non-word letters or numbers 
 #'   
 #' @examples
+#' # CAP WORDS 
 #'  str_cap_words( "One Flew Over The Cuckoo's Nest" )
-#'  str_cap_words( "Catch-22" )  # catch_22
+#'  str_cap_words( "Catch-22" )  # CATCH
 #'  
 #' @rdname CapWords
 #' @aliases str_cap_words
@@ -19,7 +20,7 @@
 
 str_cap_words <- function(string) { #
   
-  if( ! is.character(string) ) stop( as.character(sys.call())[-1], ' is not character' )
+  if( ! is.character(string) ) stop( deparse(substitute(x)), ' is not character' )
   
   string <- str_ucfirst( string )
   string <- gsub( '[^\\w]', '', string, perl=TRUE )
@@ -27,3 +28,22 @@ str_cap_words <- function(string) { #
   return(string)
   
 }
+
+
+#' @rdname str_cap_words
+#' @examples
+#'    is_cap_words( "AbcDef" )  # TRUE 
+#'    is_cap_words( "Abc" )     # TRUE 
+#'    
+#'    is_cap_words( "abcdef" )  # FALSE 
+#'    is_cap_words( "123Abc" )  # FALSE
+#'    is_cap_words( "_Abc" )    # FALSE
+#'    is_cap_words( "Abc_Def" ) # FALSE 
+#'    is_cap_words( "Abc$Def" ) # FALSE 
+#'    
+#' @export 
+is_cap_words <- function( string ) 
+  ! ( 
+    grepl( '^[^A-Z]', string, perl=TRUE ) |    # initial non-cap
+    grepl( '[_\\W]' , string, perl=TRUE )      # non-word or underscore 
+  )

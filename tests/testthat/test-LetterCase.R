@@ -1,6 +1,7 @@
 library(lettercase)
 library(testthat)
 
+
 # INITIALIZATION
   context( 'LetterCase')
 #   fooBar <- c( 'foo', 'BAR' )

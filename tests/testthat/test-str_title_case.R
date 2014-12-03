@@ -11,3 +11,4 @@ str_title_case( 'Mission of Burma' ) %>% expect_equal( 'Mission Of Burma' )
 # str_title_case( 'mission-of-burma' ) %>% expect_equal( 'Mission Of Burma' )
 # str_title_case( 'MISSION OF BURMA' ) %>% expect_equal( 'Mission Of Burma' )
 # str_title_case( 'MissionOfBurma' )   %>% expect_equal( 'Mission Of Burma' )
+
