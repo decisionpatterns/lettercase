@@ -1,0 +1,15 @@
+lower
+foo
+bar
+foo bar
+foo bar 123
+123 foo bar
+foo 123 bar
+foo-bar
+foo-bar-123
+123-foo-bar
+foo-123-bar
+foo_bar
+foo's bar
+foo-bar
+foo_bar

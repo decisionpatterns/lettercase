@@ -10,7 +10,7 @@
 #' 
 #' \itemize{ 
 #'   \item capitalization
-#'   \item whitespace / connecting characters
+#'   \item whitespace / word separating characters
 #'   \item special characters
 #'   \item acronyms
 #' }
@@ -19,7 +19,7 @@
 #' \itemize{
 #'   \item str_upper_case, str_uppercase, str_all_caps
 #'   \item str_lower_case, str_lowercase
-#'   \item str_sm
+#'   \item str_cap_wordsloa
 #' 
 #' }   
 #' 

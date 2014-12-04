@@ -20,11 +20,11 @@
 #'   
 #' # DELETION
 #'   str_delete_whitespace( "ABC 123" )    # ABC123
-#'   str_delete_connectors( "A_B-C.123" )  # ABC123
+#'   str_delete_separators( "A_B-C.123" )  # ABC123
 #'   str_delete_nonword( "ABC & 123" )     # ABC123
 #'   
 #' @rdname string-transformations
-#' @include make_str_replace.R
+#' @include make_str_replace.R patterns.R
 #' @export
 
   str_capitalize <- toupper 
@@ -53,7 +53,7 @@
 
 #' @rdname string-transformations
 #' @export
-  str_delete_connectors <- make_str_delete( pattern=pattern_connectors )
+  str_delete_separators <- make_str_delete( pattern=pattern_separators )
 
 
 #' @rdname string-transformations
@@ -72,4 +72,7 @@
   str_delete_leading_nonword <- 
     make_str_delete( pattern = '^\\W' )
 
- 
+
+#' @rdname string-transformations
+#' @export 
+  str_delete_space <- make_str_delete( pattern = fixed(' ') ) 

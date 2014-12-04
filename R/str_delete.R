@@ -15,11 +15,13 @@
 
 str_delete <- function( string, ... ) { 
 
-  for( pattern in list(...) ) 
-    string <- gsub( pattern, '', string, perl=TRUE )
-
+  for( pattern in list(...) ) {
+    # stingr: ?
+    pattern <- stringr:::check_pattern( pattern, string ) 
+    string <- stringr:::re_call( 'gsub', string, pattern, replacement='' )
+    # gsub( pattern, '', string, perl=TRUE )
+  }
+  
   return(string)    
 
 }
-  
-  

@@ -50,7 +50,3 @@ make_str_delete <- function( pattern )
   }
 
 
-#' @rdname make_str_replace
-#' @include str_is.R
-make_str_is <- function( type ) 
-  function(string) str_is( string, type )
