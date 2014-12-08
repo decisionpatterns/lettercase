@@ -1,6 +1,6 @@
 #' str_delete
 #' 
-#' Delete or remove characters from a string based on patterns
+#' Delete or remove characters from a string based on one or more pattern
 #' 
 #' @param string atomic character vector 
 #' 

@@ -19,8 +19,19 @@
 #'  
 #'  \code{autostart} determines the maximum number of values 
 #'   
-#' @return logical vector indicating which entries of \code{string} are of the 
-#' specified \code{type}
+#'  \code{make_str_is} and \code{make_string_are} are metafunctions that return 
+#'  functions that test for the given lettercase types.   
+#'   
+#' @return 
+#' For \code{str_is} a logical vector indicating which entries of \code{string} 
+#' are of the specified \code{type},
+#' 
+#' For \code{str_is_all} and \code{str_are} a logical vector of length one 
+#' indicating whether all of \code{string} is of the specified type(s)
+#' 
+#' For \code{make_str_is} and \code{make_str_are} functions that return 
+#' functions that accept a single argument and return whether the string is of 
+#' the specified types.
 #' 
 #' @seealso 
 #'   \code{\link{str_transform}} \cr

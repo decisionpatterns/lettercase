@@ -14,18 +14,16 @@
 #'   \code{str_all_caps} is a synonym for \code{str_upper_case}. 
 #'   \code{is_all_caps} is a synonym for \code{is_upper_case}.
 #' 
-#' 
-#' 
 #' @examples
 #' # str_upper_case   
 #'   str_upper_case( "one flew over the cuckoo's nest" )
 #'   str_upper_case( "catch-22" )  
 #' 
-#' @rdname str_upper_case
+#' @rdname str_uppercase
 #' @aliases upper_case
 #' @export
 
-  str_upper_case <- function(string) {
+  str_uppercase <- function(string) {
     if( ! is.character(string) ) stop( deparse( substitute(string) ), ' is not character' ) 
     toupper(string)
   }
@@ -41,6 +39,7 @@
 #'   is_upper_case( '123' )         # TRUE 
   is_upper_case <- function( string ) 
     ! grepl( "[a-z]", string, perl=TRUE )
+
 
 
 #' @rdname str_upper_case 

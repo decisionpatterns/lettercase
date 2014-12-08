@@ -11,9 +11,11 @@
 #' @rdname patterns
   pattern_whitespace <- '\\s'
  
+#' @rdname patterns 
+  pattern_whitespace_like <- "[-_]"
+
 #' @rdname patterns
   pattern_separators <- '[\\s_.-]'
-
 
 #' @rdname patterns 
   pattern_ucfirst <- '\\b([a-z])'
