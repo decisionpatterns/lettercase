@@ -1,6 +1,6 @@
 Package: lettercase
 Title: String format utilities for consistent capitalization and word breaks
-Version: 0.9.2
+Version: 0.9.3
 Authors@R: "Christopher Brown <chris.brown@decisionpatterns.com> [aut, cre]"
 Description: Utilities for formatting and manipulating character vectors for
     cases such as snake_case, Title Case, UPPERCASE, lowercase, etc.; lettercase
@@ -18,19 +18,18 @@ License: GPL-2
 LazyData: true
 Collate:
     'lettercase-package.R'
-    'make_names.R'
     'make_str_replace.R'
     'patterns.R'
     'str_cap_words.R'
     'str_delete.R'
     'str_functions.R'
     'str_is.R'
-    'str_lower_case.R'
+    'str_lowercase.R'
     'str_sentence_case.R'
     'str_snake_case.R'
     'str_spine_case.R'
     'str_title_case.R'
     'str_transform.R'
     'str_ucfirst.R'
-    'str_upper_case.R'
+    'str_uppercase.R'
     'zzz.R'

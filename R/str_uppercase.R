@@ -19,11 +19,11 @@
 #'   str_upper_case( "one flew over the cuckoo's nest" )
 #'   str_upper_case( "catch-22" )  
 #' 
-#' @rdname str_uppercase
+#' @rdname str_upper_case
 #' @aliases upper_case
 #' @export
 
-  str_uppercase <- function(string) {
+  str_upper_case <- function(string) {
     if( ! is.character(string) ) stop( deparse( substitute(string) ), ' is not character' ) 
     toupper(string)
   }
@@ -45,7 +45,6 @@
 #' @rdname str_upper_case 
 #' @aliases str_all_caps str_uppercase
 #' @export
-
   str_uppercase <- str_upper_case
 
 

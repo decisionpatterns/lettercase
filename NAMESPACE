@@ -3,7 +3,6 @@
 export(is_all_caps)
 export(is_ucfirst)
 export(is_uppercase)
-export(make_names)
 export(str_all_caps)
 export(str_are_upper_case)
 export(str_are_uppercase)

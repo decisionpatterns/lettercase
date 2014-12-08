@@ -14,7 +14,7 @@
 #'  str_snake_case( "One Flew Over The Cuckoo's Nest" )
 #'  str_snake_case( "Catch-22" )  # catch_22
 #'  
-#' @rdname SnakeCase
+#' @rdname str_snake_case
 #' @aliases str_snake_case
 #' @export
 

@@ -25,8 +25,8 @@
 #'  str_cap_words( "One Flew Over The Cuckoo's Nest" )
 #'  str_cap_words( "Catch-22" )  # CATCH
 #'  
-#' @rdname CapWords
-#' @aliases str_cap_words cap_words
+#' @rdname str_cap_words
+#' @aliases cap_words
 #' @export
 
 str_cap_words <- function(string) { #
