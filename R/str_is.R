@@ -10,6 +10,8 @@
 #' @param autostart integer; number of elements to test before concluding that 
 #'   \code{string} is of the suggested \code{type}. (Default: 30)
 #' 
+#' @param ... arguments passed to subsequent functions
+#' 
 #' @details
 #'   
 #'  \code{str_is} determines if the string belongs to one of the supported
@@ -45,10 +47,9 @@
 #'   str_transform( string, str_capitalize, str_delete_nonword )
 #'   str_delete_nonword( str_capitalize( string ) )      # SAME
 #'   
-#'   \dontrun{
-#'     # magrittr:
-#'     sting %>% str_capitalize %>% str_delete_nonword   # SAME
-#'   }
+#'   # magrittr:
+#'     string %>% str_capitalize %>% str_delete_nonword   # SAME
+#'  
 #'   
 #' @export
   str_is <- function( string, type, autostart=30L ) { 

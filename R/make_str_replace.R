@@ -7,11 +7,9 @@
 #' fixed, ignore.case and perl for how to use other types of matching: fixed, 
 #' case insensitive and perl-compatibl
 #' 
-#' @param replacement string. References of the form \1, \2 will be replaced 
+#' @param replacement string. References of the form \code{\\1}, \code{\\2} will be replaced 
 #' with the contents of the respective matched group (created by ()) within the 
 #' pattern.
-#' 
-#' @param type function that transforms the string to type.
 #' 
 #' These functions build functions that take a single string argument and return
 #' a vector as a result.
@@ -24,6 +22,11 @@
 #' 
 #' \code{make_str_is} builds a function that detects is the string is has a 
 #' certain type of formatting.
+#' 
+#' @examples
+#'   # -tk
+#'   
+#' @note non-exported function
    
 make_str_replace <- function( pattern, replacement ) 
   function(string) {
@@ -48,5 +51,3 @@ make_str_delete <- function( pattern )
     
     gsub( pattern, '', string, perl=TRUE)
   }
-
-

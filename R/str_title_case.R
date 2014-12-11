@@ -10,7 +10,6 @@
 #'   str_title_case( "One Flew Over The Cuckoo's Nest" )
 #'   str_title_case( "one_flew_over_the_cuckoo_'_s_nest" )
 #'   
-#' @rdname TitleCase
 #' @aliases str_title_case
 #' @export
 

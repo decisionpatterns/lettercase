@@ -1,24 +1,50 @@
-#' @rdname str_upper_case
-#' @aliases str_lower_case lower_case
+#' @rdname str_uppercase
+#' @examples  
+#'   str_decapitalize( "ABC" )     # abc
+#' @aliases lowercase lower_case
 #' @export
 
-  str_lower_case <- function(string) {
-    if( ! is.character(string) ) stop( deparse(substitute(string)), ' is not character' ) 
-    tolower(string)
+  str_lowercase <- function(string) {
+      if (!is.atomic(string)) 
+      stop("String must be an atomic vector", call. = FALSE)
+    if (!is.character(string)) 
+      string <- as.character(string)
+    
+    base::tolower(string)
   }
 
-#' @rdname str_upper_case
-#' @aliases str_lowercase 
-#' @export
-  str_lowercase <- str_lower_case
+  # Alternative form:
+  # make_str_replace( '([A-Z])', '\\L\\1' ) 
 
-#' @rdname str_upper_case 
+#' @rdname str_uppercase
+#' @export
+  str_lower_case <- str_lowercase
+
+#' @rdname str_uppercase
+#' @export
+  str_lower <- str_lowercase
+
+#' @rdname str_uppercase
+#' @export
+  str_decapitalize <- str_lowercase
+
+
+#' @rdname str_uppercase 
 #' @examples 
 #' # is_lower_case 
-#'   is_lower_case( 'ABC123' )      # FALSE
-#'   is_lower_case( 'abc123' )      # TRUE 
-#'   is_lower_case( 'aB'  )         # FALSE 
-#'   is_lower_case( '123' )         # TRUE 
-
-  is_lower_case <- function( string ) 
+#'   is_lowercase( 'ABC123' )      # FALSE
+#'   is_lowercase( 'abc123' )      # TRUE 
+#'   is_lowercase( 'aB'  )         # FALSE 
+#'   is_lowercase( '123' )         # TRUE 
+#'   
+#' @export   
+  is_lowercase <- function( string ) 
     ! grepl( "[A-Z]", string, perl=TRUE )
+
+#' @rdname str_uppercase
+#' @export
+  is_lower_case <- is_lowercase
+
+#' @rdname str_uppercase
+#' @export
+  is_lower <- is_lowercase

@@ -11,6 +11,7 @@
 #'  str_ucfirst( "one flew over the cuckoo's nest" )
 #'  str_ucfirst( "catch-22" )  
 #'  str_ucfirst( "Portrait of the Artist as a Young Man" )
+#'  
 #' @export
 
 str_ucfirst <- function(string) {
@@ -21,6 +22,11 @@ str_ucfirst <- function(string) {
   gsub( "\\b([a-z])([a-z]+)", "\\U\\1\\L\\2", string, perl=TRUE ) # ucfirst
 
 }
+
+
+# @rdname string_transformations
+# @export
+#    str_ucfirst <- make_str_replace( "\\b([a-z])([a-z]+)", "\\U\\1\\L\\2" )
 
 
 #' @rdname str_ucfirst

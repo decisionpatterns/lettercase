@@ -2,67 +2,95 @@
 #' 
 #' convert string to upper or lower case
 #' 
-#' @param string argument to be converted
+#' @param string character; argument to be converted
 #' 
-#' @section Upper Case and All Caps
-#' @details 
-#'   \strong{Upper case} or \code{all caps} contains all capital letters. 
-#'   Transforming to upperca 
+#' @section Upper Case and All Caps:
+#'   
+#'   \strong{uppercase}, \strong{upper_case}, \strong{allcaps}, 
+#'   \strong{all_caps} are all synonyms.
+#'   
+#'   \strong{upper case} or \code{all caps} contains all capital letters. 
 #' 
-#' @section Lower Case
-#' @details
-#'   \code{str_all_caps} is a synonym for \code{str_upper_case}. 
+#' @section Lower Case:
+#'   \code{str_all_caps} is a synonym for \code{str_uppercase}. 
 #'   \code{is_all_caps} is a synonym for \code{is_upper_case}.
 #' 
 #' @examples
-#' # str_upper_case   
-#'   str_upper_case( "one flew over the cuckoo's nest" )
-#'   str_upper_case( "catch-22" )  
+#' # str_uppercase   
+#'   str_uppercase( "one flew over the cuckoo's nest" )
+#'   str_uppercase( "catch-22" )  
 #' 
-#' @rdname str_upper_case
-#' @aliases upper_case
+#'   str_capitalize( "abc" )               # ABC
+#'   str_all_caps( "abc" )                 # ABC
+#'   
+#' @rdname str_uppercase
+#' @aliases uppercase upper_case
 #' @export
 
-  str_upper_case <- function(string) {
-    if( ! is.character(string) ) stop( deparse( substitute(string) ), ' is not character' ) 
-    toupper(string)
+  str_uppercase <- function(string) {
+    if (!is.atomic(string)) 
+      stop("String must be an atomic vector", call. = FALSE)
+    if (!is.character(string)) 
+      string <- as.character(string)
+    
+    base::toupper(string)
   }
 
+  # Alternative form:
+  # make_str_replace( '([a-z])', '\\U\\1' ) 
 
+#' @rdname str_uppercase 
+#' @export
+  str_upper_case <- str_uppercase
 
-#' @rdname str_upper_case 
+#' @rdname str_uppercase 
+#' @export
+  str_upper <- str_uppercase
+
+#' @rdname str_uppercase 
+#' @export
+  str_all_caps <- str_uppercase
+
+#' @rdname str_uppercase 
+#' @export
+  str_allcaps <- str_uppercase
+
+#' @rdname str_uppercase
+#' @export
+  str_capitalize <- str_uppercase
+  
+
+#' @rdname str_uppercase
+#' @seealso 
+#'   \code{\link{str_is}} 
 #' @examples 
-#' # is_upper_case 
-#'   is_upper_case( 'ABC123' )      # TRUE
-#'   is_upper_case( 'abc123' )      # FALSE 
-#'   is_upper_case( 'aB'  )         # FALSE 
-#'   is_upper_case( '123' )         # TRUE 
-  is_upper_case <- function( string ) 
+#' # is_uppercase 
+#'   is_uppercase( 'ABC123' )      # TRUE
+#'   is_uppercase( 'abc123' )      # FALSE 
+#'   is_uppercase( 'aB'  )         # FALSE 
+#'   is_uppercase( '123' )         # TRUE 
+#'    
+#' @export   
+  is_uppercase <- function( string ) {
+    if (!is.atomic(string)) 
+      stop("String must be an atomic vector", call. = FALSE)
+    if (!is.character(string)) 
+      string <- as.character(string)
     ! grepl( "[a-z]", string, perl=TRUE )
+  }
 
-
-
-#' @rdname str_upper_case 
-#' @aliases str_all_caps str_uppercase
+#' @rdname str_uppercase
 #' @export
-  str_uppercase <- str_upper_case
+  is_upper_case <- is_uppercase
 
-
-#' @rdname str_upper_case
-#' @aliases is_all_caps
+#' @rdname str_uppercase
 #' @export
-  is_uppercase <- str_upper_case
+  is_upper <- is_uppercase
 
-
-#' @rdname str_upper_case 
-#' @aliases str_all_caps str_uppercase
+#' @rdname str_uppercase
 #' @export
+  is_all_caps <- is_uppercase
 
-  str_all_caps <- str_upper_case
-
-
-#' @rdname str_upper_case
-#' @aliases is_all_caps
+#' @rdname str_uppercase
 #' @export
-
-  is_all_caps <- str_upper_case
+  is_allcaps <- is_uppercase
