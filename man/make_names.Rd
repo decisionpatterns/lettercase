@@ -13,7 +13,8 @@ This is coerced to character if necessary.}
 \item{unique}{logical; if TRUE, the resulting elements are unique. This may be
 desired for, e.g., column names.}
 
-\item{leading_}{What to replace leading '_' and '.' with
+\item{leading_}{What to replace leading '_' and '.' with. Can be only:
+A-Z, a-z, ., or "" (Defaults)
 
 Calls \code{nake.names} and then replaces \code{.} by \code{_}
 See \code{\link[base]{make.names}} for details.
@@ -39,7 +40,7 @@ to use snake_case naming convention or are using SQL.
 make_names(c("foo and bar", "foo-and-bar"), unique = TRUE)
   # "foo_and_bar"   "foo_and_bar_1"
 
-  make_names(c("foo and bar", "foo.and_bar"), unique = TRUE)
+  make_names(c("foo and bar", "foo.and_bar"), unique = FALSE)
   # "foo.and.bar"  "foo_and_bar"
 
   make_names(c("foo and bar", "foo.and_bar"), unique = TRUE)
@@ -47,7 +48,7 @@ make_names(c("foo and bar", "foo-and-bar"), unique = TRUE)
 
   make_names( c(".foo", "_bar") )  # "foo" "bar"
 
-  make_names( c(".foo", "_bar"), leading="." )  # "foo" "bar"
+  make_names( c(".foo", "_bar"), leading="." )  # ".foo" ".bar"
 }
 \author{
 Christopher Brown

@@ -1,6 +1,7 @@
 Package: lettercase
 Title: String format utilities for consistent capitalization and word breaks
-Version: 0.11
+Version: 0.11.1
+Date: 2015-01-26
 Authors@R: "Christopher Brown <chris.brown@decisionpatterns.com> [aut, cre]"
 Description: Utilities for formatting and manipulating character vectors for
     cases such as snake_case, Title Case, UPPERCASE, lowercase, etc.; lettercase

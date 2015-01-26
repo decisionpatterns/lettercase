@@ -10,7 +10,8 @@
 #' @param unique logical; if TRUE, the resulting elements are unique. This may be 
 #' desired for, e.g., column names.
 #' 
-#' @param leading_ What to replace leading '_' and '.' with
+#' @param leading_ What to replace leading '_' and '.' with. Can be only: 
+#' A-Z, a-z, ., or "" (Defaults)
 #' 
 #' Calls \code{nake.names} and then replaces \code{.} by \code{_}
 #' See \code{\link[base]{make.names}} for details.
@@ -38,7 +39,7 @@
 #'   make_names(c("foo and bar", "foo-and-bar"), unique = TRUE)
 #'   # "foo_and_bar"   "foo_and_bar_1"
 #'   
-#'   make_names(c("foo and bar", "foo.and_bar"), unique = TRUE)
+#'   make_names(c("foo and bar", "foo.and_bar"), unique = FALSE)
 #'   # "foo.and.bar"  "foo_and_bar"
 #'   
 #'   make_names(c("foo and bar", "foo.and_bar"), unique = TRUE)
@@ -46,7 +47,7 @@
 #'   
 #'   make_names( c(".foo", "_bar") )  # "foo" "bar"
 #' 
-#'   make_names( c(".foo", "_bar"), leading="." )  # "foo" "bar" 
+#'   make_names( c(".foo", "_bar"), leading="." )  # ".foo" ".bar" 
 #' 
 #' @export
 
@@ -55,19 +56,17 @@ make_names <- function( names, unique=FALSE, leading_ = '' ) {
    if( ! substr( leading_, 1, 1 ) %in%  c( '', '.', letters, LETTERS ) )
      stop( "'leading_' must be a lower- or uppercase letter or '.'" )
   
-   # DETERMINE WHICH HAVE LEADING . or _
-     leading <- grepl( '^[\\._]', names )
-  
    # USE make.names
-     names <- sub( '^_', '.', names )
-     names <- make.names( names, allow_ = TRUE )
-     names <- gsub( '\\.', '_', names )
-     names <- gsub( "\\_+", "_", names )
+     names <- sub( '^[^A-Za-z\\.]+', '.', names )   # replace leading non-lead character with .
+     names <- make.names( names, allow_ = TRUE ) # make.names, allow underscores
+     names <- gsub( '\\.', '_', names )          # replace . -> _
+     names <- gsub( "\\_+", "_", names )         # replace multiple leading _ with single _    
    
-     if( unique ) names <- make.unique( names, sep="_")
+     if( unique ) names <- make.unique( names, sep="_")  # make.unique
  
-   # REPLACE LEADING CHAR BY leading_ 
-     substr( names[ leading ], 1, 1 ) = leading_ 
+   # REPLACE LEADING _ WITH leading_ 
+     leading <- grepl( '^_', names )
+     substr( names[ leading ], 1, 1 ) = leading_  
   
    return(names)
   
