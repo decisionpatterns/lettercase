@@ -13,6 +13,7 @@
 #' @examples
 #'  str_snake_case( "One Flew Over The Cuckoo's Nest" )
 #'  str_snake_case( "Catch-22" )  # catch_22
+#'  str_snake_case( "Catch.22" )
 #'  
 #' @rdname str_snake_case
 #' @aliases str_snake_case
@@ -26,7 +27,7 @@ str_snake_case <- function(string) { #
   
   string <- gsub( '[^\\w\\s-]', '', string, perl=TRUE )
   string <- tolower(string)
-  string <- gsub( '[\\s-]+', '_', string, perl=TRUE )
+  string <- gsub( pattern_separators, '_', string, perl=TRUE )
   
   return(string)
   
