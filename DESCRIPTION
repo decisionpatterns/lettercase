@@ -1,19 +1,23 @@
 Package: lettercase
-Title: String format utilities for consistent capitalization and word breaks
-Version: 0.11.2
-Date: 2015-01-26
+Title: Utilities For Formating Strings With Consistent Capitalization, Word
+    Breaks and White Space
+Version: 0.12.0
+Date: 2015-08-07
 Authors@R: "Christopher Brown <chris.brown@decisionpatterns.com> [aut, cre]"
-Description: Utilities for formatting and manipulating character vectors for
-    cases such as snake_case, Title Case, UPPERCASE, lowercase, etc.; lettercase
-    provides a simple, consistent, intuitive and high performing interface for
-    implemting standards for character, strings, text and names.
+Description: Utilities for formatting strings and character
+    vectors to for capitalization, word break and white space. In addition to f
+    Supported formats are: snake_case, spine-case, camelCase,
+    PascalCase, Title Case, UPPERCASE, lowercase, Sentence case or
+    combinations thereof. 'lettercase' strives to provide a simple, consistent,
+    intuitive and high performing interface.
 Depends:
     R (>= 3.1.0)
 Imports:
     magrittr (>= 1.0.1),
     stringr (>= 0.6.2)
 Suggests:
-    testthat
+    testthat,
+    knitr
 Roxygen: list(wrap = FALSE)
 License: GPL-2
 LazyData: true
@@ -23,6 +27,7 @@ Collate:
     'make_str_replace.R'
     'patterns.R'
     'str_cap_words.R'
+    'str_collapse_whitespace.R'
     'str_delete.R'
     'str_functions.R'
     'str_is.R'
@@ -36,3 +41,4 @@ Collate:
     'str_uppercase.R'
     'utils.R'
     'zzz.R'
+VignetteBuilder: knitr

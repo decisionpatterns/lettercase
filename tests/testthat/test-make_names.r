@@ -31,6 +31,7 @@ expect_equal(
 
 # -----
 str <- c(".foo", "_bar")
+
 expect_equal( 
     make_names( str )  
   , c( "foo", "bar" )

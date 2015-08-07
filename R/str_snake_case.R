@@ -11,15 +11,20 @@
 #' * no support for acronyms
 #' 
 #' @examples
-#'  str_snake_case( "One Flew Over The Cuckoo's Nest" )
-#'  str_snake_case( "Catch-22" )  # catch_22
-#'  str_snake_case( "Catch.22" )
-#'  
+#'   str_snake_case( "One Flew Over The Cuckoo's Nest" )
+#'   str_snake_case( "Catch-22" )  # catch_22
+#'   str_snake_case( "Catch.22" )
+#'   str_snake_case( "Catch_22" )
+#'   str_snake_case( "Catch  22" )
+#'   
 #' @rdname str_snake_case
 #' @aliases str_snake_case
 #' @export
 
-str_snake_case <- function(string) { #
+str_snake_case <- function( 
+    string
+  , whitespace = getOption('lettercase.whitespace', '[^\\w\\s-\\.]' ) 
+) { #
   
   if( ! is.character(string) ) stop( as.character(sys.call())[-1], ' is not character' )
   

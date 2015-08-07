@@ -65,8 +65,10 @@ make_names <- function( names, unique=FALSE, leading_ = '' ) {
      if( unique ) names <- make.unique( names, sep="_")  # make.unique
  
    # REPLACE LEADING _ WITH leading_ 
-     leading <- grepl( '^_', names )
-     substr( names[ leading ], 1, 1 ) = leading_  
+     # leading <- grepl( '^_', names )
+     # substr( names[ leading ], 1, 1 ) = leading_  
+     names <- gsub( '^_', leading_, names)
+   
   
    return(names)
   

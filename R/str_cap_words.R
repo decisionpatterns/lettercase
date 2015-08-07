@@ -21,9 +21,9 @@
 #'   
 #'    
 #' @examples
-#' # CAP WORDS 
-#'  str_cap_words( "One Flew Over The Cuckoo's Nest" )
-#'  str_cap_words( "Catch-22" )  # CATCH
+#'   # CAP WORDS 
+#'     str_cap_words( "One Flew Over The Cuckoo's Nest" )
+#'     str_cap_words( "Catch-22" )  # CATCH
 #'  
 #' @rdname str_cap_words
 #' @aliases cap_words

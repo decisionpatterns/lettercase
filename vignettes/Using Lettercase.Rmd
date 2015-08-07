@@ -1,0 +1,136 @@
+---
+title: "Using Lettercase"
+author: "Christopher Brown"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+Mostly this vignette should be unnecessary. We suspect 99% of the uses of this 
+package will be simply formatting character vector to match a simple standard:
+
+    book.names %>% str_title_case
+    file.path  %>% str_spine_case
+    words      %>% str_lower_case
+    variables  %>% str_camel_case
+
+Most of the lettercase functions are self-explanatory. Almost every function 
+takes a character/string input (as the first argument) and performs the 
+transformation on the string according to the functions name. Most or all of the 
+functions are obvious.  In these cases, this vignette is probably unnessary and 
+probably could be safely filed under TLDR. However for the interested and/or 
+masocistic, the following details the nuances to proper case, word break and 
+whitespace formatting.
+
+
+## Features
+
+* Lettercase contains functions for affecting:
+** capitalization :
+** word-breaks    : is this different from whitespace? 
+** whitespace     : collapse_whitespace
+** punctuation    : str_strip_punctuation
+
+* Works with Magrittr/pipe operators; all transformations take a 
+character/string as the first argument.
+
+* Transformation are idempotent
+* Transformations are state functions
+
+
+## Capitalization Functions
+
+The following functions control string capitalization:
+
+* toupper, tolower, casefold (from BASE)
+* str_upper, str_uppercase, str_upper_case
+* str_lower, str_lowercase, str_lower_case
+* str_ucfirst
+
+
+## Word Breaks and whitespace
+
+Word breaks, sentence breaks and whitespace ...
+
+In most *Cases*, whitespace is defined ..... 
+
+Lettercase also allows definition for how word breaks, line breaks, sentence 
+breaks and white space are treated.
+
+In snake_case, white space is defined by an underscore.
+In spinal-case, white space is a hyphen.
+
+* functions collapse_whitespace: adjacent whitespace are collapsed into one 
+  a single whitespace character.
+
+* collapse.whitespace
+
+## Capitalization Formats 
+
+The following cases affect capitalization only
+
+* lower case
+* upper case
+* sentence case (Only the first character and characters following punctions 
+marks: . ! ? are capitalized)
+* Title Case
+
+
+* camelCase
+
+## Word Breaks and White Space 
+
+* 
+
+## Co
+
+## Reverse Transformations  
+
+In general, the formatting transformation are destructive.  While we could have
+created classes/attributes that kept track of the input data, we felt this was 
+an edge case. 
+
+### Idempotent 
+
+Most functions are idempotent. Multiple application of the same function 
+
+  F(F(x)) = F(x) 
+  
+  
+## State Function 
+
+Lettercase's transformation are state functions by design. That is they are 
+independent of the path: 
+
+  G(F(x)) = G(x)
+
+Thus, the result of any series of lettercase functions results in the same 
+result as the last function applied.
+
+The `collapse.whitespace` and `whitespace` options allow for exceptions u
+
+
+## TLDR: FAQ and Design Decisions
+
+* Why are all the transformation functions prefixed with "str_"? 
+
+This matches what was done with the _stringr_ and _stringi_ packages. This helps
+aviod package namespace clashes. 
+
+
+* Why all the aliasing of functions?  Why so many functions that do the same 
+thing with different names?
+
+Mainly, because we couldn't agree on the names and sometimes two different names
+refer to the same type of formatting. Rather than enforce the use of something 
+someone is not used to, we decided to be liberal with the 
+
+
+* Why don't you support _X_ formatting?
+
+Send us the spec and we will?
+
+

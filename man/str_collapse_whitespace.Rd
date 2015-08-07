@@ -2,9 +2,14 @@
 % Please edit documentation in R/str_collapse_whitespace.R
 \name{str_collapse_whitespace}
 \alias{str_collapse_whitespace}
+\alias{str_collapse_ws}
 \title{Collpases multiple adjacent whitespace characters into one}
 \usage{
 str_collapse_whitespace(string, pattern = getOption("lettercase.whitespace",
+  c("\\\\s", "-", "_")),
+  replacement = getOption("lettercase.whitespace.replacement", "\\\\1"))
+
+str_collapse_ws(string, pattern = getOption("lettercase.whitespace",
   c("\\\\s", "-", "_")),
   replacement = getOption("lettercase.whitespace.replacement", "\\\\1"))
 }
