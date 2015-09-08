@@ -31,3 +31,4 @@
 
 #' @rdname patterns
   pattern_lowercase <- '[a-z]'
+  

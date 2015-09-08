@@ -12,10 +12,10 @@ vignette: >
 Mostly this vignette should be unnecessary. We suspect 99% of the uses of this 
 package will be simply formatting character vector to match a simple standard:
 
-    book.names %>% str_title_case
-    file.path  %>% str_spine_case
-    words      %>% str_lower_case
-    variables  %>% str_camel_case
+    "one flew over the cuckoo's nest" %>% str_title_case  
+    "/home/hstruman secret files"     %>% str_spine_case
+    "The QUICK brown fox"             %>% str_lower_case
+    "first_name"                      %>% str_camel_case
 
 Most of the lettercase functions are self-explanatory. Almost every function 
 takes a character/string input (as the first argument) and performs the 

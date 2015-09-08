@@ -6,11 +6,11 @@
 \title{Collpases multiple adjacent whitespace characters into one}
 \usage{
 str_collapse_whitespace(string, pattern = getOption("lettercase.whitespace",
-  c("\\\\s", "-", "_")),
+  c(pattern_whitespace, pattern_whitespace_like)),
   replacement = getOption("lettercase.whitespace.replacement", "\\\\1"))
 
 str_collapse_ws(string, pattern = getOption("lettercase.whitespace",
-  c("\\\\s", "-", "_")),
+  c(pattern_whitespace, pattern_whitespace_like)),
   replacement = getOption("lettercase.whitespace.replacement", "\\\\1"))
 }
 \arguments{
@@ -28,8 +28,11 @@ Collapses adjacent whitespace into a single character
 }
 \details{
 \code{collapse_whitespace} replaces repeated whitespace characters with a
-  single whitespace character. By default, it will find and replace any of
-  multiple adjacent \code{pattern} characters with its single character.
+  whitespace replacement. By default, it will find and replace any of
+  multiple adjacent \code{pattern} characters with the replacement.
+
+  \code{pattern} can be a named patterns (see \code{\link{patterns}}) or
+  character strings that are treated as regular expressions by default.
 
   To collapse mixed whitespace, provide a single patterns in the form of a
   regular expression class, e.g. \code{"[\\s-_]"}. This can lead to confusing
@@ -70,6 +73,7 @@ str_collapse_whitespace( "A  B" )
   str_collapse_whitespace( "A _B_ C", '[\\\\s-_]', " " )
 }
 \seealso{
-\code{\link[base]{gsub}} which is used to implement this function.
+\code{\link{patterns}} \cr
+  \code{\link[base]{gsub}} which is used to implement this function. \cr
 }
 

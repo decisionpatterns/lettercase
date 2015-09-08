@@ -11,8 +11,11 @@
 #' 
 #' @details 
 #'   \code{collapse_whitespace} replaces repeated whitespace characters with a 
-#'   single whitespace character. By default, it will find and replace any of 
-#'   multiple adjacent \code{pattern} characters with its single character.  
+#'   whitespace replacement. By default, it will find and replace any of 
+#'   multiple adjacent \code{pattern} characters with the replacement.  
+#'   
+#'   \code{pattern} can be a named patterns (see \code{\link{patterns}}) or 
+#'   character strings that are treated as regular expressions by default.
 #'   
 #'   To collapse mixed whitespace, provide a single patterns in the form of a 
 #'   regular expression class, e.g. \code{"[\\s-_]"}. This can lead to confusing 
@@ -42,7 +45,8 @@
 #'    
 #'                                                                                               
 #' @seealso 
-#'   \code{\link[base]{gsub}} which is used to implement this function.                                                                                                                                                                                
+#'   \code{\link{patterns}} \cr
+#'   \code{\link[base]{gsub}} which is used to implement this function. \cr                                                                                                                                                                                
 #'                                                                                                                                                                                                                                                                                                                                                    
 #' @examples 
 #'   str_collapse_whitespace( "A  B" )  
@@ -64,7 +68,7 @@
 
 str_collapse_whitespace <- function( 
     string
-  , pattern     = getOption('lettercase.whitespace', c('\\s', '-', '_')  ) # '[\\s-_]'
+  , pattern     = getOption('lettercase.whitespace', c( pattern_whitespace, pattern_whitespace_like )  )   
   , replacement = getOption('lettercase.whitespace.replacement', "\\1" ) 
 ) { 
   

@@ -1,8 +1,8 @@
 Package: lettercase
 Title: Utilities For Formating Strings With Consistent Capitalization, Word
     Breaks and White Space
-Version: 0.12.0
-Date: 2015-08-07
+Version: 0.12.1
+Date: 2015-09-08
 Authors@R: "Christopher Brown <chris.brown@decisionpatterns.com> [aut, cre]"
 Description: Utilities for formatting strings and character
     vectors to for capitalization, word break and white space. In addition to f
