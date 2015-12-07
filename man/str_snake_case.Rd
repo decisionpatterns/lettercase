@@ -13,7 +13,9 @@ str_snake_case(string, whitespace = getOption("lettercase.whitespace",
 * characters are all lower case
 * non- \code{\\w}, \code{\\s} and - are dropped
 * \code{\\w} and - are converted to underscore
-* no support for acronyms}
+* no support for acronyms
+* multiple adjacent undescores are replaced by single underscore
+* Underscores at beginning or end of names are dropped}
 }
 \description{
 Function used to convert character vectors to snake case format.
@@ -24,5 +26,6 @@ str_snake_case( "One Flew Over The Cuckoo's Nest" )
   str_snake_case( "Catch.22" )
   str_snake_case( "Catch_22" )
   str_snake_case( "Catch  22" )
+  str_snake_case( " Catch 22 " )
 }
 
