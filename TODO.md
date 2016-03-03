@@ -1,3 +1,3 @@
 
-- move 'conform' to this package
+
 x rename package and git repository to lettercase

@@ -54,7 +54,7 @@ make_names(c("foo and bar", "foo-and-bar"), unique = TRUE)
 Christopher Brown
 }
 \references{
-\url{http://en.wikipedia.com/Snake_case}
+\url{https://en.wikipedia.org/wiki/Snake_case} \cr
   \url{http://titlecase.com}
 }
 \seealso{

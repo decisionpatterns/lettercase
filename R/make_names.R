@@ -28,7 +28,7 @@
 #' @return a character vector containing  
 #'
 #' @references 
-#'   \url{http://en.wikipedia.com/Snake_case}
+#'   \url{https://en.wikipedia.org/wiki/Snake_case} \cr
 #'   \url{http://titlecase.com}
 #' 
 #' @author Christopher Brown   
