@@ -1,7 +1,8 @@
 VVersion 0.13.1
 ----
 - Fix spelling of formatting
-
+- Temporarily remove links
+- Rebuilt and Resubmit.
 
 
 Version 0.13.0 
