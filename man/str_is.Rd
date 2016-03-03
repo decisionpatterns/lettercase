@@ -69,7 +69,9 @@ string = c( "catch-22", "finnegans wake" )
   str_delete_nonword( str_capitalize( string ) )      # SAME
 
   # magrittr:
+  \dontrun{
     string \%>\% str_capitalize \%>\% str_delete_nonword   # SAME
+  }
 }
 \seealso{
 \code{\link{str_transform}} \cr

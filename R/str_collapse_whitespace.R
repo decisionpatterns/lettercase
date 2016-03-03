@@ -14,7 +14,7 @@
 #'   whitespace replacement. By default, it will find and replace any of 
 #'   multiple adjacent \code{pattern} characters with the replacement.  
 #'   
-#'   \code{pattern} can be a named patterns (see \code{\link{patterns}}) or 
+#'   \code{pattern} can be a named patterns (see \code{?patterns}) or 
 #'   character strings that are treated as regular expressions by default.
 #'   
 #'   To collapse mixed whitespace, provide a single patterns in the form of a 
@@ -45,7 +45,7 @@
 #'    
 #'                                                                                               
 #' @seealso 
-#'   \code{\link{patterns}} \cr
+#'   \code{?patterns} \cr
 #'   \code{\link[base]{gsub}} which is used to implement this function. \cr                                                                                                                                                                                
 #'                                                                                                                                                                                                                                                                                                                                                    
 #' @examples 
@@ -59,7 +59,7 @@
 #'   str_collapse_whitespace( "A _B_ C", '[\\s-_]' ) # possibly ill-defined 
 #'   str_collapse_whitespace( "A _B_ C", c("\\s", "_") ) 
 #'   str_collapse_whitespace( "A _B_ C", '[\\s-_]', " " ) 
-#'   
+#'
 #' @export 
 
 

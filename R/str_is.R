@@ -48,10 +48,12 @@
 #'   str_delete_nonword( str_capitalize( string ) )      # SAME
 #'   
 #'   # magrittr:
+#'   \dontrun{
 #'     string %>% str_capitalize %>% str_delete_nonword   # SAME
-#'  
+#'   }
 #'   
 #' @export
+
   str_is <- function( string, type, autostart=30L ) { 
     autostart <- min( length(string), autostart ) 
     string[ 1:autostart ] == type( string[ 1:autostart ] )

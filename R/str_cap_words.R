@@ -33,10 +33,12 @@ str_cap_words <- function(string) { #
   
   if( ! is.character(string) ) stop( deparse(substitute(x)), ' is not character' )
   
-  results <- string %>% 
-    str_replace( pattern_separators, ' ' ) %>% 
-    str_ucfirst %>% 
-    str_delete_space
+  results <- str_delete_space( str_ucfirst( str_replace( string, pattern_separators, ' ' ) ) )
+  
+# results <- string %>% 
+#     str_replace( pattern_separators, ' ' ) %>% 
+#     str_ucfirst %>% 
+#     str_delete_space
   
   return(results)
   

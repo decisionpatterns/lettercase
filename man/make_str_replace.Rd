@@ -11,7 +11,7 @@ make_str_delete(pattern)
 }
 \arguments{
 \item{pattern}{pattern to look for, as defined by a POSIX regular expression.
-See the “Extended Regular Expressions” section of regex for details. See
+See the "Extended Regular Expressions" section of regex for details. See
 fixed, ignore.case and perl for how to use other types of matching: fixed,
 case insensitive and perl-compatible expressions.}
 
@@ -33,9 +33,6 @@ certain type of formatting.}
 }
 \description{
 Functions for building string functions for replacement, deletion and testing
-}
-\note{
-non-exported function
 }
 \examples{
 # -tk

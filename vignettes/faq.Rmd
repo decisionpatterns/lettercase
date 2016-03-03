@@ -1,0 +1,30 @@
+---
+title: "FAQ"
+author: "Christopher Brown"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{FAQ}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+## TLDR: FAQ and Design Decisions
+
+* Why are all the transformation functions prefixed with "str_"? 
+
+This matches the convention of the  _stringr_ and _stringi_ packages. This helps
+aviod name collisions. 
+
+
+* Why all the aliasing of functions?  Why so many functions that do the same 
+thing with different names?
+
+Mainly, because we couldn't agree on the names and sometimes two different names
+refer to the same type of formatting. Rather than enforce the use of something 
+someone is not used to, we decided to be liberal with the aliases.
+
+
+* Why don't you support _X_ formatting?
+
+Send us the spec and we might?

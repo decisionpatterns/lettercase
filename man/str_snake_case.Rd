@@ -8,7 +8,10 @@ str_snake_case(string, whitespace = getOption("lettercase.whitespace",
   "[^\\\\w\\\\s-\\\\.]"))
 }
 \arguments{
-\item{string}{object to turn into a title case
+\item{string}{object to turn into a title case}
+
+\item{whitespace}{regular expression pattern to match for white-space
+
 
 * characters are all lower case
 * non- \code{\\w}, \code{\\s} and - are dropped

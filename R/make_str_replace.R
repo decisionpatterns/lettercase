@@ -3,7 +3,7 @@
 #' Functions for building string functions for replacement, deletion and testing
 #' 
 #' @param pattern pattern to look for, as defined by a POSIX regular expression. 
-#' See the “Extended Regular Expressions” section of regex for details. See 
+#' See the "Extended Regular Expressions" section of regex for details. See 
 #' fixed, ignore.case and perl for how to use other types of matching: fixed, 
 #' case insensitive and perl-compatible expressions.
 #' 
@@ -25,8 +25,7 @@
 #' 
 #' @examples
 #'   # -tk
-#'   
-#' @note non-exported function
+
    
 make_str_replace <- function( pattern, replacement ) 
   function(string) {

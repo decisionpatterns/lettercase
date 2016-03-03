@@ -1,0 +1,101 @@
+---
+title: "Using Lettercase"
+author: "Christopher Brown"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{lettercase}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+Mostly this vignette should be unnecessary. The majority of the uses of this 
+package will be simply transform a string according to a simple standard, for 
+example:
+
+    "one flew over the cuckoo's nest" %>% str_title_case  
+    "/home/hstruman secret files"     %>% str_spine_case
+    "The QUICK brown fox"             %>% str_lower_case
+    "first_name"                      %>% str_camel_case
+
+Most of the lettercase functions are self-explanatory. Almost every function 
+takes a character/string input (as the first argument) and performs the 
+transformation on the string accordingly. This vignette is probably unnessary, 
+but may be of value as getting better introduced to the package.
+
+
+Features
+----
+
+Lettercase contains functions for formatting:
+
+- capitalization 
+- whitespace and wordbreaks     
+- punctuation   
+
+
+It works with magrittr/pipeR operators; all transformations take a 
+character/string as the first argument.
+
+
+Transformations are:
+
+- idempotent (all?)
+- state functions
+
+
+### Capitalization Functions
+
+The following cases affect capitalization only
+
+- lower case: `str_lower[[_]case]`
+- upper case: `str_upper[[_]case]`
+- sentence case: `str_sentence_case` 
+  (Only the first character and characters following punctions marks: . ! ? are capitalized)
+- Title Case: `str_title_case`
+
+
+
+### Word Breaks and Whitespace
+
+Word breaks, sentence breaks and whitespace ...
+
+In most *Cases*, whitespace is defined ..... 
+
+Lettercase also allows definition for how word breaks, line breaks, sentence 
+breaks and white space are treated.
+
+In snake_case, white space is defined by an underscore.
+In spinal-case, white space is a hyphen.
+
+- functions collapse_whitespace: adjacent whitespace are collapsed into one 
+  a single whitespace character.
+
+- collapse.whitespace
+
+
+### Both capitalization and 
+- camelCase
+
+
+### Reverse Transformations  
+
+In general, the formatting transformation are destructive and irrevesible. 
+While classes and attributes can be used to track input data, we felt this was 
+an edge case.  Most of the time, the original strings do not need to be 
+preserved
+
+
+### Idempotent 
+
+Most functions are idempotent. Multiple application of the same function 
+
+    F(F(x)) = F(x) 
+  
+  
+### State Function 
+
+By design lettercase's transformation are (mostly) state functions independent
+of the order they are appied. For example, 
+
+    G(F(x)) = F(G(x))

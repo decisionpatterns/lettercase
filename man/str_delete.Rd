@@ -9,12 +9,20 @@ str_delete(string, ...)
 \arguments{
 \item{string}{atomic character vector}
 
-\item{...}{atomic patterns}
+\item{...}{stringr-style matching \code{\link[stringr]{modifiers}}}
 }
 \description{
-Delete or remove characters from a string based on one or more pattern
+Delete or remove characters from a string based on one or more patterns
+}
+\details{
+Deletes all occurences of the patterns from the string using
+\code{\link[stringr]{str_replace_all}}
 }
 \examples{
-str_delete( "ABC & 123", "\\\\W" )  # ABC123
+str_delete( "ABC & 123", stringr::regex("\\\\W") )  # ABC123
+}
+\references{
+\code{\link[stringr]{modifiers}} \cr
+ \code{\link[stringr]{str_replace_all}}
 }
 

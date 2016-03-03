@@ -3,6 +3,8 @@
 #' Function used to convert character vectors to snake case format. 
 #' 
 #' @param string object to turn into a title case
+#' @param whitespace regular expression pattern to match for white-space
+#' 
 # @param acronyms character; tokens to capitalize
 #' 
 #' * characters are all lower case 

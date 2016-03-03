@@ -1,27 +1,32 @@
 #' str_delete
 #' 
-#' Delete or remove characters from a string based on one or more pattern
+#' Delete or remove characters from a string based on one or more patterns
 #' 
 #' @param string atomic character vector 
+#' @param ... stringr-style matching \code{\link[stringr]{modifiers}} 
 #' 
-#' @param ... atomic patterns
+#' @details 
 #' 
+#' Deletes all occurences of the patterns from the string using 
+#' \code{\link[stringr]{str_replace_all}}
+#' 
+#' 
+#' @references 
+#'  \code{\link[stringr]{modifiers}} \cr
+#'  \code{\link[stringr]{str_replace_all}}
 #' 
 #' @examples
 #'   
-#'   str_delete( "ABC & 123", "\\W" )  # ABC123
+#'   str_delete( "ABC & 123", stringr::regex("\\W") )  # ABC123
 #' 
+#' @import stringr
 #' @export 
 
 str_delete <- function( string, ... ) { 
 
   for( pattern in list(...) ) {
-    # stingr: ?
-    pattern <- stringr:::check_pattern( pattern, string ) 
-    string <- stringr:::re_call( 'gsub', string, pattern, replacement='' )
-    # gsub( pattern, '', string, perl=TRUE )
+    string <- stringr::str_replace_all(string,pattern,'')
   }
-  
   return(string)    
 
 }

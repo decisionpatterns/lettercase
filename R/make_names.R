@@ -57,7 +57,7 @@ make_names <- function( names, unique=FALSE, leading_ = '' ) {
      stop( "'leading_' must be a lower- or uppercase letter or '.'" )
   
    # USE make.names
-     names <- sub( '^[^A-Za-z\\.]+', '.', names )   # replace leading non-lead character with .
+     names <- sub( '^[^A-Za-z\\.]+', '.', names )# replace leading non-lead character with .
      names <- make.names( names, allow_ = TRUE ) # make.names, allow underscores
      names <- gsub( '\\.', '_', names )          # replace . -> _
      names <- gsub( "\\_+", "_", names )         # replace multiple leading _ with single _    
