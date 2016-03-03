@@ -1,8 +1,8 @@
-VVersion 0.13.1
+Version 0.13.1
 ----
 - Fix spelling of formatting
-- Temporarily remove links
-- Rebuilt and Resubmit.
+- Temporarily remove links for github badges
+- Rebuilt, recheck, resubmit
 
 
 Version 0.13.0 
