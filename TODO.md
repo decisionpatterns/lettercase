@@ -1,3 +1,5 @@
+- [ ] Allow for ommitting characters from case.
+      For example: str_snake_case( "path/to/file" )  # path-to-file 
 
 - [ ] Add package pipe util, cf. bettR
 

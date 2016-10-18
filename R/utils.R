@@ -12,8 +12,6 @@ collapse <- function(x,collapse='') paste(x,collapse = collapse)
 qw <- function (...) as.character(match.call())[-1]
 
 
-
-
 #   `%|%` =
 #   function(left, right){
 #     subsright = substitute(right)

@@ -1,8 +1,8 @@
 Package: lettercase
 Title: Utilities for Formatting Strings with Consistent Capitalization, Word
     Breaks and White Space
-Version: 0.13.1
-Date: 2016-03-03
+Version: 0.14.0
+Date: 2016-10-18
 Authors@R: c(
     person("Christopher", "Brown", , "chris.brown@decisionpatterns.com", c("aut", "cre") ),
     person("Decision Patterns", role = "cph")
@@ -19,7 +19,11 @@ Suggests:
     testthat,
     knitr,
     magrittr (>= 1.5)
-Roxygen: list(wrap = FALSE)
+URL: 
+    https://github.com/decisionpatterns/lettercase 
+    http://www.decisionpatterns.com
+BugReports: 
+    https://github.com/decisionpatterns/lettercase/issues
 License: GPL-2 | file LICENSE
 LazyData: true
 Collate:
@@ -43,3 +47,4 @@ Collate:
     'utils.R'
     'zzz.R'
 VignetteBuilder: knitr
+RoxygenNote: 5.0.1.9000

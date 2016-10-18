@@ -22,7 +22,7 @@ Latest Release:
     install.packages('lettercase')
 
 
-Development Version
+Development Version:
 
     install.packages('devtools')
     devtools::install_github('decisionpatterns/lettercase')
