@@ -48,3 +48,5 @@ Collate:
     'zzz.R'
 VignetteBuilder: knitr
 RoxygenNote: 5.0.1.9000
+Repository: CRAN
+
