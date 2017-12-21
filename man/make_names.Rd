@@ -51,9 +51,6 @@ to use snake_case naming convention or are using SQL.
   make_names( c(".foo", "_bar"), leading="." )  # ".foo" ".bar" 
 
 }
-\author{
-Christopher Brown
-}
 \references{
 \url{https://en.wikipedia.org/wiki/Snake_case} \cr
   \url{http://titlecase.com}
@@ -61,4 +58,6 @@ Christopher Brown
 \seealso{
 \code{\link[base]{make.names}}, \code{\link[base]{make.unique}}
 }
-
+\author{
+Christopher Brown
+}

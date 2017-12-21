@@ -77,4 +77,3 @@ Collapses adjacent whitespace into a single character
 \code{?patterns} \cr
   \code{\link[base]{gsub}} which is used to implement this function. \cr
 }
-
