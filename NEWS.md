@@ -5,7 +5,7 @@ lettercase
 2018-?-? : Version 0.15.0 
 ----
 - New Features:
--- CamelCase support (Closes Issue #1)
+-- CamelCase to snake_case (Issue #1)
 
 
 2016-03-03 : Version 0.13.0 

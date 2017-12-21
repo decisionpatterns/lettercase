@@ -7,6 +7,7 @@ Lettercase
 [![Downloads](http://cranlogs.r-pkg.org/badges/lettercase?color=brightgreen)](http://www.r-pkg.org/pkg/lettercase)
 [![](http://cranlogs.r-pkg.org/badges/grand-total/lettercase)](http://cran.rstudio.com/web/packages/lettercase/index.html)
 [![software impact](http://depsy.org/api/package/r/lettercase/badge.svg)](http://depsy.org/package/r/lettercase)
+[![Build Status](https://travis-ci.org/decisionpatterns/lettercase.svg?branch=dev)](https://travis-ci.org/decisionpatterns/lettercase)
 
 
 Utilities for formatting strings and character vectors to for capitalization,
