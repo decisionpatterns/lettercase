@@ -23,6 +23,9 @@ str_snake_case(string, whitespace = getOption("lettercase.whitespace",
 \description{
 Function used to convert character vectors to snake case format.
 }
+\note{
+The CamelCase conversion is adapted from an approach described on [Stack Overflow](https://stackoverflow.com/questions/1175208/elegant-python-function-to-convert-camelcase-to-snake-case/1176023#1176023).
+}
 \examples{
   str_snake_case( "One Flew Over The Cuckoo's Nest" )
   str_snake_case( "Catch-22" )  # catch_22
@@ -31,5 +34,8 @@ Function used to convert character vectors to snake case format.
   str_snake_case( "Catch  22" )
   str_snake_case( " Catch 22 " )
   
+  str_snake_case( "patient.dob" )
+  str_snake_case( "patientDob" )
+  str_snake_case( "PatientDob" )
+  
 }
-
