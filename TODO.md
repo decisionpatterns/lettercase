@@ -1,5 +1,9 @@
+* [ ] make_names and make.names ... allow for non-syntactic names
+      relates to leading_
+
 - [ ] Allow for ommitting characters from case.
       For example: str_snake_case( "path/to/file" )  # path-to-file 
+      'as.is'
 
 - [ ] Add package pipe util, cf. bettR
 
