@@ -14,4 +14,3 @@ Sentance case is ...}
 \description{
 Format a string in sentence case
 }
-

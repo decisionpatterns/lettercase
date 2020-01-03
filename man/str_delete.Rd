@@ -27,4 +27,3 @@ Deletes all occurences of the patterns from the string using
 \code{\link[stringr]{modifiers}} \cr
  \code{\link[stringr]{str_replace_all}}
 }
-

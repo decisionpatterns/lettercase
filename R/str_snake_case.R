@@ -14,6 +14,8 @@
 #' * multiple adjacent undescores are replaced by single underscore 
 #' * Underscores at beginning or end of names are dropped  
 #' 
+#' @note The CamelCase conversion is adapted from an approach described on [Stack Overflow](https://stackoverflow.com/questions/1175208/elegant-python-function-to-convert-camelcase-to-snake-case/1176023#1176023).
+#' 
 #' @examples
 #'   str_snake_case( "One Flew Over The Cuckoo's Nest" )
 #'   str_snake_case( "Catch-22" )  # catch_22
@@ -21,6 +23,10 @@
 #'   str_snake_case( "Catch_22" )
 #'   str_snake_case( "Catch  22" )
 #'   str_snake_case( " Catch 22 " )
+#'   
+#'   str_snake_case( "patient.dob" )
+#'   str_snake_case( "patientDob" )
+#'   str_snake_case( "PatientDob" )
 #'   
 #' @rdname str_snake_case
 #' @aliases str_snake_case
@@ -34,6 +40,10 @@ str_snake_case <- function(
   if( ! is.character(string) ) stop( as.character(sys.call())[-1], ' is not character' )
   
   # for( ac in acronyms )  string <- gsub( tolower(ac), ac, string )
+  
+  # The first two lines accommodate CamelCase: https://stackoverflow.com/questions/1175208/elegant-python-function-to-convert-camelcase-to-snake-case/1176023#1176023
+  string <- gsub("(.)([A-Z][a-z]+)" , "\\1_\\2", string, perl=TRUE )                 # Separate w/ dashes based on capitalization
+  string <- gsub("([a-z0-9])([A-Z])", "\\1_\\2", string, perl=TRUE )
   
   string <- gsub( '[^\\w\\s-\\.]', '', string, perl=TRUE )
   string <- tolower(string)

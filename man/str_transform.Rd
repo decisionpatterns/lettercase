@@ -39,4 +39,3 @@ Convert a string by applying one or more str_* functions.
 \code{\link{make_str_replace}}
   \code{\link{make_str_delete}}
 }
-

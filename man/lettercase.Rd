@@ -33,4 +33,3 @@ Most often, the common convenience functions will be used.  These are:
   \url{http://en.wikipedia.org/wiki/Capitalization}
   \url{http://perldoc.perl.org/perlrecharclass.html}
 }
-

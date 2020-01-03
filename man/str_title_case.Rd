@@ -18,4 +18,3 @@ exported and should not be called directly.
   str_title_case( "one_flew_over_the_cuckoo_'_s_nest" )
   
 }
-
