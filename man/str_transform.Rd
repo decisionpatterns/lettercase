@@ -7,7 +7,7 @@
 str_transform(string, ...)
 }
 \arguments{
-\item{string}{vector. This must be an atomic vector, and will be coerced to 
+\item{string}{vector. This must be an atomic vector, and will be coerced to
 a character vector}
 
 \item{...}{one or more functions to apply to the string}
@@ -19,8 +19,8 @@ a character vector
 Convert a string by applying one or more str_* functions.
 }
 \details{
-\code{str_transform} applies successive functions to its first argument, 
- \code{string}.
+\code{str_transform} applies successive functions to its first argument,
+\code{string}.
 }
 \examples{
   string = c( "catch-22", "finnegans wake" )
@@ -37,6 +37,5 @@ Convert a string by applying one or more str_* functions.
 }
 \seealso{
 \code{\link{make_str_replace}}
-  \code{\link{make_str_delete}}
+\code{\link{make_str_delete}}
 }
-

@@ -35,7 +35,7 @@ str_snake_case <- function(
   
   # for( ac in acronyms )  string <- gsub( tolower(ac), ac, string )
   
-  string <- gsub( '[^\\w\\s-\\.]', '', string, perl=TRUE )
+  string <- gsub( '[^\\w\\s\\.\\-]', '', string, perl=TRUE )  # Remove non-word, non-space, non . non -
   string <- tolower(string)
   string <- gsub( pattern_separators, '_', string, perl=TRUE )
   string <- gsub( '__+', '_', string, perl=TRUE )  # Replace multiple with single _'s

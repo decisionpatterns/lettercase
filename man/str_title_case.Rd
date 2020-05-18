@@ -10,7 +10,7 @@ str_title_case(x)
 \item{x}{object to turn into a title case}
 }
 \description{
-internal function for converting character to title case.  This is not 
+internal function for converting character to title case.  This is not
 exported and should not be called directly.
 }
 \examples{
@@ -18,4 +18,3 @@ exported and should not be called directly.
   str_title_case( "one_flew_over_the_cuckoo_'_s_nest" )
   
 }
-

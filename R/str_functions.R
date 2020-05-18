@@ -24,11 +24,6 @@
 #' @rdname string_transformations
 #' @include make_str_replace.R patterns.R
 #' @export
-
-
-
-#' @rdname string_transformations
-#' @export
   str_delete_whitespace <- make_str_delete( pattern=pattern_whitespace )
 
 

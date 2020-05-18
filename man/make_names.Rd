@@ -7,13 +7,13 @@
 make_names(names, unique = FALSE, leading_ = "")
 }
 \arguments{
-\item{names}{character; vector to be coerced to syntactically valid names. 
+\item{names}{character; vector to be coerced to syntactically valid names.
 This is coerced to character if necessary.}
 
-\item{unique}{logical; if TRUE, the resulting elements are unique. This may be 
+\item{unique}{logical; if TRUE, the resulting elements are unique. This may be
 desired for, e.g., column names.}
 
-\item{leading_}{What to replace leading '_' and '.' with. Can be only: 
+\item{leading_}{What to replace leading '_' and '.' with. Can be only:
 A-Z, a-z, ., or "" (Defaults)
 
 Calls \code{nake.names} and then replaces \code{.} by \code{_}
@@ -21,9 +21,9 @@ See \code{\link[base]{make.names}} for details.
 
 Multiple consecutive underscores are replaced by a single underscore.
 
-Names the end up with leading underscores are replaced with 
-\code{ leading_ } which can be a string of any length beginning with 
-a letter or '.'. The default is to drop leading underscores.   
+Names the end up with leading underscores are replaced with
+\code{ leading_ } which can be a string of any length beginning with
+a letter or '.'. The default is to drop leading underscores.
 
 This function is idempotent -- multiple application of the
 function do not change the results.}
@@ -32,7 +32,7 @@ function do not change the results.}
 a character vector containing
 }
 \description{
-Make syntactically valid names out from character vectors replacing 
+Make syntactically valid names out from character vectors replacing
 \code{.} (dot) with \code{_} underscore.  Hhis is useful when you wish
 to use snake_case naming convention or are using SQL.
 }
@@ -51,14 +51,13 @@ to use snake_case naming convention or are using SQL.
   make_names( c(".foo", "_bar"), leading="." )  # ".foo" ".bar" 
 
 }
-\author{
-Christopher Brown
-}
 \references{
 \url{https://en.wikipedia.org/wiki/Snake_case} \cr
-  \url{http://titlecase.com}
+\url{http://titlecase.com}
 }
 \seealso{
 \code{\link[base]{make.names}}, \code{\link[base]{make.unique}}
 }
-
+\author{
+Christopher Brown
+}

@@ -15,7 +15,7 @@ str_delete(string, ...)
 Delete or remove characters from a string based on one or more patterns
 }
 \details{
-Deletes all occurences of the patterns from the string using 
+Deletes all occurences of the patterns from the string using
 \code{\link[stringr]{str_replace_all}}
 }
 \examples{
@@ -25,6 +25,5 @@ Deletes all occurences of the patterns from the string using
 }
 \references{
 \code{\link[stringr]{modifiers}} \cr
- \code{\link[stringr]{str_replace_all}}
+\code{\link[stringr]{str_replace_all}}
 }
-

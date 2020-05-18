@@ -5,7 +5,7 @@ context('str_collapse_whitespace')
 "A  B__C" %>% str_collapse_whitespace %>% expect_equal("A B_C")
 "A _B_ C" %>% str_collapse_whitespace %>% expect_equal("A _B_ C")
 
-"A _B_ C" %>% str_collapse_whitespace('[\\s-_]') %>% expect_equal("A_B C")
+"A _B_ C" %>% str_collapse_whitespace('[\\s_-]') %>% expect_equal("A_B C")
 "A _B_ C" %>% str_collapse_whitespace() %>% expect_equal("A _B_ C")
 
 
@@ -15,5 +15,5 @@ context('str_collapse_whitespace')
 
 context('..using regex class for pattern')
 "A _B_ C" %>% 
-  str_collapse_whitespace('[\\s-_]') %>%   # No match
+  str_collapse_whitespace('[\\s_-]') %>%   # No match
   expect_equal("A_B C")  

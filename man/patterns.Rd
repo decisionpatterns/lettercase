@@ -2,16 +2,32 @@
 % Please edit documentation in R/patterns.R
 \docType{data}
 \name{pattern_whitespace}
-\alias{pattern_lowercase}
-\alias{pattern_nonword}
-\alias{pattern_separators}
-\alias{pattern_ucfirst}
-\alias{pattern_uppercase}
 \alias{pattern_whitespace}
 \alias{pattern_whitespace_like}
+\alias{pattern_separators}
+\alias{pattern_ucfirst}
 \alias{pattern_word}
+\alias{pattern_nonword}
+\alias{pattern_uppercase}
+\alias{pattern_lowercase}
 \title{Common regular expression patterns used by lettercase}
-\format{An object of class \code{character} of length 1.}
+\format{
+An object of class \code{character} of length 1.
+
+An object of class \code{character} of length 1.
+
+An object of class \code{character} of length 1.
+
+An object of class \code{character} of length 1.
+
+An object of class \code{character} of length 1.
+
+An object of class \code{character} of length 1.
+
+An object of class \code{character} of length 1.
+
+An object of class \code{character} of length 1.
+}
 \usage{
 pattern_whitespace
 
@@ -34,9 +50,8 @@ These are patterns that are used in the lettercase package.
 }
 \details{
 \code{lettercase} provides a number of regular expression patterns that are
-  used by the case conversion functions.
-  
-  These are not exported; to use them prefix them with \code{lettercase:::*}
+used by the case conversion functions.
+
+These are not exported; to use them prefix them with \code{lettercase:::*}
 }
 \keyword{datasets}
-

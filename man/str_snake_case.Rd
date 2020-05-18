@@ -4,21 +4,23 @@
 \alias{str_snake_case}
 \title{str_snake_case}
 \usage{
-str_snake_case(string, whitespace = getOption("lettercase.whitespace",
-  "[^\\\\w\\\\s-\\\\.]"))
+str_snake_case(
+  string,
+  whitespace = getOption("lettercase.whitespace", "[^\\\\w\\\\s-\\\\.]")
+)
 }
 \arguments{
 \item{string}{object to turn into a title case}
 
 \item{whitespace}{regular expression pattern to match for white-space
-
-
-* characters are all lower case 
-* non- \code{\\w}, \code{\\s} and - are dropped
-* \code{\\w} and - are converted to underscore
-* no support for acronyms
-* multiple adjacent undescores are replaced by single underscore 
-* Underscores at beginning or end of names are dropped}
+\itemize{
+\item characters are all lower case
+\item non- \code{\\w}, \code{\\s} and - are dropped
+\item \code{\\w} and - are converted to underscore
+\item no support for acronyms
+\item multiple adjacent undescores are replaced by single underscore
+\item Underscores at beginning or end of names are dropped
+}}
 }
 \description{
 Function used to convert character vectors to snake case format.
@@ -32,4 +34,3 @@ Function used to convert character vectors to snake case format.
   str_snake_case( " Catch 22 " )
   
 }
-
