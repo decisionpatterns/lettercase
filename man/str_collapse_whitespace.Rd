@@ -76,7 +76,8 @@ outcome.
   # See note above:
   str_collapse_whitespace( "A _B_ C", '[\\\\s-_]' ) # possibly ill-defined 
   str_collapse_whitespace( "A _B_ C", c("\\\\s", "_") ) 
-  str_collapse_whitespace( "A _B_ C", '[\\\\s-_]', " " ) 
+  str_collapse_whitespace( "A _B- C", '[\\\\s_-]', " " ) 
+  str_collapse_whitespace( "A -B- C", '[\\\\s_\\\\-]', " " ) 
 
 }
 \seealso{
